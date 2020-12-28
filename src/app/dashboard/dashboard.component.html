@@ -1,0 +1,142 @@
+<html>
+<head>
+    <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div id="background">
+    <div id="leftPanel">
+        <div class="card">
+            <div class="card-body">
+                <div id="map" style="width:100%;height:500px"></div>
+            </div>
+        </div>
+    </div>
+    <div id="rightPanel">
+        <div id="view">
+            <div id="vehicleView">
+                <div class="card bg-light">
+                    <div class="card-header">
+                        Vehicles
+                    </div>
+                    <div class="card-body" *ngFor="let vehicle of Vehicles;let i = index;">
+                        <div class="item card" (click)="loadPoints(i)">
+                            <div class="card-body">
+                                <div>{{vehicle.Vehicle_Number}}</div>
+                                <div>{{vehicle.Driver_Name}}</div>
+                                <div>{{vehicle.Vehicle_Type}}</div>
+                                <div>{{vehicle.Fuel_Type}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="vehiclePointsView">
+                    <div class="card bg-light">
+                            <div class="card-header">
+                                Vehicle Location (Longitude & Latitude)
+                            </div>
+                            <div class="card-body" *ngFor="let point of VehiclesPoint">
+                                <div class="item card">
+                                    <div class="card-body">
+                                        <div>{{point.Vehicle_Number}}</div>
+                                        <div>{{point.Latitude}}</div>
+                                        <div>{{point.Longitude}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            </div>
+        </div>
+        <div id="formView">
+            <div id="addVehicleForm">
+                <div class="card bg-light">
+                    <div class="card-header">
+                        Add New Vehicle
+                    </div>
+                    <div class="card-body">
+                        <table>
+                            <tr>
+                                <td class="form-group">
+                                    <input type="vehicle_number" class="form-control" placeholder="Vehicle Number" [(ngModel)]="Vehicle_Number">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="form-group">
+                                    <input type="driver_name" class="form-control" placeholder="Driver Name" [(ngModel)]="Driver_Name">
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td class="form-group">
+                                    <input type="vehicle_type" class="form-control" placeholder="Vehicle Type" [(ngModel)]="Vehicle_Type">
+                                </td>
+                            </tr>                   
+                            <tr>
+                                <td class="form-group">
+                                    <input type="Fuel Type" class="form-control" placeholder="Fuel Type" [(ngModel)]="Fuel_Type">
+                                </td>
+                            </tr>    
+                            <tr>
+                                <td>
+                                    <button type="Add" class="btn btn-primary" (click)="add_new_vehicle()">Add</button>    
+                                </td>
+                            </tr>   
+                            <tr>
+                                <td>
+                                    {{add_new_vehicle_msg}}
+                                </td>
+                            </tr>                                
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div id="addPointForm">
+                    <div class="card bg-light">
+                            <div class="card-header">
+                                Add New Point
+                            </div>
+                            <div class="card-body">
+                                <table>
+                                    <tr>
+                                        <td class="form-group">
+                                            <input type="vehicle_number" class="form-control" placeholder="Vehicle Number" [(ngModel)]="Vehicle_Number_Point">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="form-group">
+                                            <input type="latitude" class="form-control" placeholder="Latitude" [(ngModel)]="Latitude">
+                                        </td>
+                                    </tr> 
+                                    <tr>
+                                        <td class="form-group">
+                                            <input type="longitude" class="form-control" placeholder="Longitude" [(ngModel)]="Longitude">
+                                        </td>
+                                    </tr>                   
+                                    <tr>
+                                        <td>
+                                            <button type="Add" class="btn btn-primary" (click)="add_new_vehicle_point()">Add</button>    
+                                        </td>
+                                    </tr>     
+                                    <tr>
+                                        <td>
+                                            {{add_new_vehicle_point_msg}}
+                                        </td>
+                                    </tr>                              
+                                </table>
+                            </div>
+                        </div>
+            </div>    
+        </div>       
+    </div>
+  </div>
+</body>
+</html>

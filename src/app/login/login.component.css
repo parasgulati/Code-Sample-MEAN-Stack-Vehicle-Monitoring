@@ -1,0 +1,30 @@
+#background
+{
+    position: absolute;
+    background-color:#FFAFBD;
+    min-height: 100%;
+    min-width: 100%;
+}
+#loginPanel
+{
+    position: absolute;
+    background-color: #ffc3a0;
+    min-height: 30em;
+    width: 20em;
+    margin-left: 30%;
+    margin-top:50px;
+    box-shadow:20px 20px 50px 15px pink;
+    border-radius: 1em;
+    border:10px solid #FFAFBD;
+}
+.form-element
+{
+    margin-top:50px;
+    width:15em;
+    margin-left:auto;
+    margin-right: auto;
+}
+.form-row
+{
+    margin-bottom:10px;
+}

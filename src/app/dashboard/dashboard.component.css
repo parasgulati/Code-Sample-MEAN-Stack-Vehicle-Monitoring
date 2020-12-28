@@ -1,0 +1,82 @@
+#background
+{
+    position: absolute;
+    background-color: #FFAFBD;
+    min-height: 100%;
+    height:auto;
+    min-width: 100%;
+}
+#leftPanel
+{
+    position: absolute;
+    height:100%;
+    width:50%;
+    left:0px;
+    padding:1%;
+}
+.item:hover
+{
+    background-color: beige;
+    cursor: pointer;
+}
+#rightPanel
+{
+    position: absolute;
+    height:100%;
+    width:50%;
+    right:0px;
+}
+#view
+{
+    position: absolute;
+    height:100%;
+    width:65%;
+    left:0px;
+}
+#formView
+{
+    position: absolute;
+    height:100%;
+    width:35%;
+    right:0px;
+}
+#vehicleView
+{
+    padding: 2%;
+    position: absolute;
+    height:100%;
+    width:50%;
+    left:0px;
+    overflow:auto;
+}
+#vehiclePointsView
+{
+    position: absolute;
+    height: 100%;
+    width:50%;
+    right:0px;
+    padding: 2%;
+    overflow:auto;
+}
+#addVehicleForm
+{
+    position: absolute;
+    overflow:auto;
+    height: 50%;
+    width: 100%;
+    top:0px;
+    padding:5%;
+}
+#addPointForm
+{
+    position: absolute;
+    overflow:auto;
+    height: 50%;
+    width: 100%;
+    bottom: 0px;
+    padding:5%;
+}
+#map
+{
+    overflow:auto;
+}
